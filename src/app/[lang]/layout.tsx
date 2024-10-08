@@ -5,8 +5,8 @@ import { LOCALES } from "@/constants/i18n/locales";
 import { Locale } from "@/constants/i18n/locale.enum";
 import { getDictionary } from "@/i18n/dictionary.util";
 import { I18nParams } from "@/types/i18n/i18n-params.type";
+import Header from "@/components/header/header";
 import "@/app/globals.css";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 export async function generateMetadata({
   params: { lang },
@@ -34,7 +34,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <AntdRegistry>{children}</AntdRegistry>
+        <Header />
+        {children}
       </body>
       {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
     </html>
