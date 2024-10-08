@@ -6,6 +6,7 @@ import { Locale } from "@/constants/i18n/locale.enum";
 import { getDictionary } from "@/i18n/dictionary.util";
 import { I18nParams } from "@/types/i18n/i18n-params.type";
 import Header from "@/components/header/header";
+import { NextUIProvider } from "@nextui-org/system";
 import "@/app/globals.css";
 
 export async function generateMetadata({
@@ -34,8 +35,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <Header />
-        {children}
+        <NextUIProvider>
+          <Header />
+          <main className="dark text-foreground bg-background">{children}</main>
+        </NextUIProvider>
       </body>
       {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
     </html>
