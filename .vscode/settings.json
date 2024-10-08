@@ -1,7 +1,17 @@
 {
   "editor.formatOnSave": true,                // Automatically format on save
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"              // Automatically fix ESLint issues on save
+    "source.fixAll.eslint": "always",              // Automatically fix ESLint issues on save
+    "source.fixAll.stylelint": "always"
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "[postcss]": {
+    "editor.formatOnSave": true
+  },
+  "[pcss]": {
+    "editor.formatOnSave": true
   },
   "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   "typescript.preferences.importModuleSpecifier": "non-relative", // Use absolute imports
