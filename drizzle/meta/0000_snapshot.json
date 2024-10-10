@@ -1,5 +1,5 @@
 {
-  "id": "28b7ddf3-7f29-445d-9a26-177c44288db1",
+  "id": "5c4e1981-f17c-43db-8adc-fce7d82ba424",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -10,16 +10,21 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "uuid",
+          "type": "serial",
           "primaryKey": true,
-          "notNull": true,
-          "default": "gen_random_uuid()"
+          "notNull": true
         },
         "password": {
           "name": "password",
           "type": "varchar(512)",
           "primaryKey": false,
           "notNull": true
+        },
+        "userId": {
+          "name": "userId",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
         },
         "createdAt": {
           "name": "createdAt",
@@ -31,13 +36,13 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "user_credentials_id_users_id_fk": {
-          "name": "user_credentials_id_users_id_fk",
+        "user_credentials_userId_users_id_fk": {
+          "name": "user_credentials_userId_users_id_fk",
           "tableFrom": "user_credentials",
           "tableTo": "users",
           "schemaTo": "users",
           "columnsFrom": [
-            "id"
+            "userId"
           ],
           "columnsTo": [
             "id"
