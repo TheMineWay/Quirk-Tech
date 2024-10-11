@@ -24,6 +24,6 @@ jobs:
         run: npm install
 
       - name: ⏫ Migrate database changes
-        run: npm run db:prod:push
+        run: npm run db:migrate
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
