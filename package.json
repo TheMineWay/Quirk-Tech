@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@types/node": "^22",
+    "@types/pg": "^8.11.10",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "drizzle-kit": "^0.25.0",
