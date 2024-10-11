@@ -7,6 +7,7 @@ import { HeaderMenuItemsSelect } from "@/db/schema/configs/header-menu-items.tab
 import Link from "next/link";
 
 import logo from "@/assets/branding/logo/logo.png";
+import { LangProps } from "@/types/i18n/lang-props.type";
 
 const cache = new NodeCache({ stdTTL: 60 * 60, checkperiod: 120 });
 
@@ -25,7 +26,7 @@ const getMenuItems = async () => {
   return data;
 };
 
-export default async function Header() {
+export default async function Header({ lang }: LangProps) {
   const menuItems = await getMenuItems();
 
   return (
@@ -36,7 +37,7 @@ export default async function Header() {
         </Link>
       </div>
       <nav className="h-20 w-full gap-1 flex flex-col justify-between">
-        <MainSearch className="h-2/4" />
+        <MainSearch lang={lang} className="h-2/4" />
         <DesktopMenu className="h-2/4" items={menuItems} />
       </nav>
     </div>

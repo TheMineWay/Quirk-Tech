@@ -29,14 +29,17 @@ export async function generateMetadata({
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  params: { lang },
+}: Readonly<
+  {
+    children: React.ReactNode;
+  } & I18nParams
+>) {
   return (
     <html lang="en">
       <body className={`antialiased`}>
         <NextUIProvider>
-          <Header />
+          <Header lang={lang} />
           <main className="dark text-foreground bg-background">{children}</main>
         </NextUIProvider>
       </body>
