@@ -8,6 +8,7 @@ import Link from "next/link";
 
 import logo from "@/assets/branding/logo/logo.png";
 import { LangProps } from "@/types/i18n/lang-props.type";
+import HeaderExtraActions from "@/components/header/extra-actions/header-extra-actions";
 
 const cache = new NodeCache({ stdTTL: 60 * 60, checkperiod: 120 });
 
@@ -40,6 +41,7 @@ export default async function Header({ lang }: LangProps) {
         <MainSearch lang={lang} className="h-2/4" />
         <DesktopMenu className="h-2/4" items={menuItems} />
       </nav>
+      <HeaderExtraActions />
     </div>
   );
 }

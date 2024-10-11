@@ -1,0 +1,15 @@
+.action {
+    background-color: transparent;
+    color: var(--foreground);
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    transition: background-color 0.4s ease;
+
+}
+
+.action:hover {
+    background-color: var(--primary);
+    color: var(--background);
+
+}

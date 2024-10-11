@@ -2,6 +2,7 @@ import { getDictionary } from "@/i18n/dictionary.util";
 import clsx from "clsx";
 import { Button } from "@nextui-org/button";
 import { LangProps } from "@/types/i18n/lang-props.type";
+import { Search } from "@mui/icons-material";
 import styles from "./main-search.module.css";
 
 type Props = {
@@ -23,7 +24,7 @@ export default async function MainSearch({ className, lang }: Props) {
           "h-full flex items-center justify-center"
         )}
       >
-        <span className="material-symbols-outlined">search</span>
+        <Search />
       </Button>
     </div>
   );
