@@ -14,7 +14,7 @@ type Props = {
 
 export default function DesktopMenu({ className, items }: Props) {
   return (
-    <ul className={clsx("flex gap-4", className)}>
+    <ul className={clsx("hidden md:flex gap-4", className)}>
       {items.map((item) => (
         <li className={clsx(styles.item, "p-2")} key={item.id}>
           <Item {...item} />

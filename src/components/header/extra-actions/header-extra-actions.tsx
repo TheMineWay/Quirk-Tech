@@ -7,7 +7,7 @@ const linkClassName = clsx(styles.action, "p-2 rounded-md");
 
 export default function HeaderExtraActions() {
   return (
-    <div className="h-14 max-w-24 gap-1 flex items-center content-center">
+    <div className="h-10 md:h-14 max-w-24 gap-1 flex items-center content-center">
       <Link href="/" className={linkClassName}>
         <ShoppingCart />
       </Link>
