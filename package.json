@@ -29,7 +29,8 @@
     "node-cache": "^5.1.2",
     "pg": "^8.13.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@types/node": "^22",
