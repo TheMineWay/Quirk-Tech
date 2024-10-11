@@ -1,0 +1,29 @@
+name: Deploy to Production
+
+# Trigger the workflow when changes are pushed to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 💚 Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22" # Use the version of Node.js you need
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: ⏫ Migrate database changes
+        run: npm run db:migrate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}

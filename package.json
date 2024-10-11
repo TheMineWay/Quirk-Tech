@@ -8,22 +8,31 @@
     "start": "next start",
     "lint": "next lint",
     "lint:css": "stylelint '**/*.{css,scss,pcss}'",
-    "lint:css:fix": "stylelint '**/*.{css,scss}' --fix"
+    "lint:css:fix": "stylelint '**/*.{css,scss}' --fix",
+    "db:dev:push": "npx drizzle-kit push",
+    "db:generate": "npx drizzle-kit generate",
+    "db:migrate": "npx drizzle-kit migrate",
+    "db:prod:push": "npm run db:generate && npm run db:migrate"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.14",
     "@nextui-org/button": "^2.0.38",
     "@nextui-org/system": "^2.2.6",
     "@nextui-org/theme": "^2.2.11",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.34.1",
     "framer-motion": "^11.11.4",
     "next": "14.2.14",
+    "pg": "^8.13.0",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^22",
+    "@types/pg": "^8.11.10",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "drizzle-kit": "^0.25.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.14",
     "postcss": "^8",
