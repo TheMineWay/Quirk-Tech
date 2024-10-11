@@ -1,7 +1,11 @@
-export default function MainSearch() {
+type Props = {
+  className?: string;
+};
+
+export default function MainSearch({ className }: Props) {
   return (
-    <>
-      <input placeholder="Search" />
-    </>
+    <div className={className}>
+      <input placeholder="Search" className="h-full" />
+    </div>
   );
 }

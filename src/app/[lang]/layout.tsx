@@ -16,7 +16,7 @@ export async function generateMetadata({
 
   return {
     title: layout.Title,
-    description: `LinkedIn Queens game.`,
+    description: `Tech ecommerce (fake website).`,
     keywords: ["Ecommerce", "Technology"],
     alternates: {
       languages: LOCALES.reduce((prev, locale) => {
