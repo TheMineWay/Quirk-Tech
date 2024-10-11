@@ -1,5 +1,6 @@
 import { DB_SCHEMAS } from "@/db/db-schemas";
 import { TABLE_TIMESTAMPS } from "@/db/schema-utils/table-timestamps";
+import { InferSelectModel } from "drizzle-orm";
 import {
   boolean,
   foreignKey,
@@ -29,3 +30,5 @@ export const headerMenuItems = DB_SCHEMAS.configs.table(
     orderIdx: index("order_idx").on(table.order),
   })
 );
+
+export type HeaderMenuItemsSelect = InferSelectModel<typeof headerMenuItems>;

@@ -1,0 +1,14 @@
+.search {
+    border-bottom: 1px solid var(--primary);
+    border-left: 6px solid var(--primary);
+    border-top: 1px solid var(--primary);
+    outline: none;
+    transition: border-bottom-width 0.3s ease;
+}
+
+.button {
+    background-color: var(--primary);
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    color: var(--primary-foreground)
+}

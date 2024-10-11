@@ -1,3 +1,8 @@
 {
-  "Title": "Quirk Tech"
+  "Title": "Quirk Tech",
+  "header": {
+    "search": {
+      "Placeholder": "Search"
+    }
+  }
 }

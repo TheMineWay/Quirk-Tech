@@ -1,0 +1,19 @@
+.item {
+    position: relative;
+}
+
+.item::before {
+    background-color: var(--primary);
+    bottom: 0;
+    content: '';
+    height: 1.5px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+    width: 0;
+}
+
+.item:hover::before {
+    width: 100%;
+}
