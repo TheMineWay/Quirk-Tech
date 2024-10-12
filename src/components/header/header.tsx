@@ -1,5 +1,4 @@
 import MainSearch from "@/components/header/search/main-search";
-import DesktopMenu from "@/components/header/menu/desktop-menu";
 import Image from "next/image";
 import { HeaderMenuItemsRepository } from "@/db/repository/configs/header-menu-items.repository";
 import NodeCache from "node-cache";
@@ -7,9 +6,10 @@ import { HeaderMenuItemsSelect } from "@/db/schema/configs/header-menu-items.tab
 import Link from "next/link";
 import { LangProps } from "@/types/i18n/lang-props.type";
 import HeaderExtraActions from "@/components/header/extra-actions/header-extra-actions";
-import { Menu } from "@mui/icons-material";
+import HeaderMenu from "@/components/header/menu/menu";
 
 import logo from "@/assets/branding/logo/logo.png";
+import { Menu } from "@mui/icons-material";
 
 const cache = new NodeCache({ stdTTL: 60 * 60, checkperiod: 120 });
 
@@ -43,7 +43,7 @@ export default async function Header({ lang }: LangProps) {
       </div>
       <nav className="h-10 md:h-20 w-full gap-1 flex flex-col justify-between">
         <MainSearch lang={lang} className="h-full md:h-2/4" />
-        <DesktopMenu className="h-2/4" items={menuItems} />
+        <HeaderMenu items={menuItems} />
       </nav>
       <HeaderExtraActions />
     </div>
