@@ -1,12 +1,8 @@
 "use client";
 
+import Drawer from "@/components/ui/drawer/drawer";
 import { MenuItems } from "@/types/components/header/menu/menu-item.type";
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  useDisclosure,
-} from "@nextui-org/modal";
+import { useDisclosure } from "@nextui-org/modal";
 
 type Props = {
   isOpen?: boolean;
@@ -15,14 +11,10 @@ type Props = {
 
 export default function MobileMenu({ isOpen, onOpenChange }: Props) {
   return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-      <ModalContent className="h-screen absolute left-0">
-        {() => (
-          <ModalBody>
-            <p>...</p>
-          </ModalBody>
-        )}
-      </ModalContent>
-    </Modal>
+    <>
+      <Drawer isOpen={isOpen} toggleDrawer={onOpenChange}>
+        PACO
+      </Drawer>
+    </>
   );
 }
