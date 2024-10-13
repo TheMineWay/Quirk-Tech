@@ -23,6 +23,7 @@ export default async function MainSearch({ className, lang }: Props) {
           styles.button,
           "h-full flex items-center justify-center"
         )}
+        aria-roledescription={layout.header.search.SearchButtonA11y}
       >
         <Search />
       </Button>

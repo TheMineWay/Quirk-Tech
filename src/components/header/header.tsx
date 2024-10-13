@@ -56,7 +56,7 @@ export default async function Header({ lang }: Readonly<LangProps>) {
         <MainSearch lang={lang} className="h-full md:h-2/4" />
         <HeaderMenu items={menuItemsWithLabel} />
       </nav>
-      <HeaderExtraActions />
+      <HeaderExtraActions lang={lang} />
     </div>
   );
 }
