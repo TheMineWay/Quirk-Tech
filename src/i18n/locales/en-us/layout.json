@@ -1,3 +1,39 @@
 {
-  "Title": "Quirk Tech"
+  "Title": "Quirk Tech",
+  "header": {
+    "search": {
+      "Placeholder": "Search",
+      "SearchButtonA11y": "Search"
+    },
+    "menu": {
+      "mobile": {
+        "Open": "Open mobile menu"
+      },
+      "items": {
+        "account": {
+          "Text": "Account"
+        },
+        "keyboards": {
+          "Text": "Keyboards"
+        },
+        "headsets": {
+          "Text": "Headsets"
+        },
+        "non-mechanic": {
+          "Text": "Non mechanic"
+        },
+        "mechanic": {
+          "Text": "Mechanic"
+        }
+      }
+    },
+    "actions": {
+      "cart": {
+        "a11y": "Shopping cart"
+      },
+      "account": {
+        "a11y": "Account"
+      }
+    }
+  }
 }
