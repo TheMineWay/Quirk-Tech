@@ -7,9 +7,9 @@ import Link from "next/link";
 import { LangProps } from "@/types/i18n/lang-props.type";
 import HeaderExtraActions from "@/components/header/extra-actions/header-extra-actions";
 import HeaderMenu from "@/components/header/menu/menu";
+import MobileMenuIcon from "@/components/header/menu/mobile-menu-icon";
 
 import logo from "@/assets/branding/logo/logo.png";
-import { Menu } from "@mui/icons-material";
 
 const cache = new NodeCache({ stdTTL: 60 * 60, checkperiod: 120 });
 
@@ -34,7 +34,7 @@ export default async function Header({ lang }: LangProps) {
   return (
     <div className="flex h-18 md:h-24 gap-2 md:gap-8 px-2 md:px-6 pt-4 pb-4 md:pb-0 bg-background shadow-xl">
       <div className="block md:hidden w-4 items-center content-center mr-2">
-        <Menu />
+        <MobileMenuIcon menuItems={menuItems} />
       </div>
       <div className="hidden md:block h-14 max-w-24">
         <Link href="/">
