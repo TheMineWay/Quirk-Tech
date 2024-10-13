@@ -5,16 +5,20 @@ import { MenuItems } from "@/types/components/header/menu/menu-item.type";
 import { Menu } from "@mui/icons-material";
 import { useDisclosure } from "@nextui-org/modal";
 
-type Props = {
+type Props = Readonly<{
   menuItems: MenuItems;
-};
+  openMenuAriaDescription?: string;
+}>;
 
-export default function MobileMenuIcon({ menuItems }: Props) {
+export default function MobileMenuIcon({
+  menuItems,
+  openMenuAriaDescription,
+}: Props) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <>
-      <button onClick={onOpen}>
+      <button onClick={onOpen} aria-roledescription={openMenuAriaDescription}>
         <Menu />
       </button>
       <MobileMenu

@@ -8,6 +8,7 @@ import { LangProps } from "@/types/i18n/lang-props.type";
 import HeaderExtraActions from "@/components/header/extra-actions/header-extra-actions";
 import HeaderMenu from "@/components/header/menu/menu";
 import MobileMenuIcon from "@/components/header/menu/mobile-menu-icon";
+import { getDictionary } from "@/i18n/dictionary.util";
 
 import logo from "@/assets/branding/logo/logo.png";
 
@@ -28,13 +29,17 @@ const getMenuItems = async () => {
   return data;
 };
 
-export default async function Header({ lang }: LangProps) {
+export default async function Header({ lang }: Readonly<LangProps>) {
   const menuItems = await getMenuItems();
+  const { layout } = await getDictionary(lang);
 
   return (
     <div className="flex h-18 md:h-24 gap-2 md:gap-8 px-2 md:px-6 pt-4 pb-4 md:pb-0 bg-background shadow-xl">
       <div className="block md:hidden w-4 items-center content-center mr-2">
-        <MobileMenuIcon menuItems={menuItems} />
+        <MobileMenuIcon
+          menuItems={menuItems}
+          openMenuAriaDescription={layout.header.menu.mobile.Open}
+        />
       </div>
       <div className="hidden md:block h-14 max-w-24">
         <Link href="/">

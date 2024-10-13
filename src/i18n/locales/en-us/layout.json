@@ -3,6 +3,11 @@
   "header": {
     "search": {
       "Placeholder": "Search"
+    },
+    "menu": {
+      "mobile": {
+        "Open": "Open mobile menu"
+      }
     }
   }
 }
