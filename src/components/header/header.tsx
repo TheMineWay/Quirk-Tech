@@ -20,9 +20,7 @@ const getMenuItems = async () => {
   const cacheData = cache.get<HeaderMenuItemsSelect[]>("menu-items");
   if (cacheData && cacheData.length > 0) return cacheData;
 
-  const data = await new HeaderMenuItemsRepository().findAllActiveByParent({
-    parentId: null,
-  });
+  const data = await new HeaderMenuItemsRepository().findAll();
 
   cache.set("menu-items", data);
 
@@ -30,14 +28,22 @@ const getMenuItems = async () => {
 };
 
 export default async function Header({ lang }: Readonly<LangProps>) {
-  const menuItems = await getMenuItems();
   const { layout } = await getDictionary(lang);
+
+  const menuItems = await getMenuItems();
+  const menuItemsWithLabel = menuItems.map((item) => ({
+    ...item,
+    label:
+      (layout.header.menu.items as Record<string, { Text: string }>)[
+        item.i18nKey
+      ]?.Text ?? item.i18nKey,
+  }));
 
   return (
     <div className="flex h-18 md:h-24 gap-2 md:gap-8 px-2 md:px-6 pt-4 pb-4 md:pb-0 bg-background shadow-xl">
       <div className="block md:hidden w-4 items-center content-center mr-2">
         <MobileMenuIcon
-          menuItems={menuItems}
+          menuItems={menuItemsWithLabel}
           openMenuAriaDescription={layout.header.menu.mobile.Open}
         />
       </div>
@@ -48,7 +54,7 @@ export default async function Header({ lang }: Readonly<LangProps>) {
       </div>
       <nav className="h-10 md:h-20 w-full gap-1 flex flex-col justify-between">
         <MainSearch lang={lang} className="h-full md:h-2/4" />
-        <HeaderMenu items={menuItems} />
+        <HeaderMenu items={menuItemsWithLabel} />
       </nav>
       <HeaderExtraActions />
     </div>

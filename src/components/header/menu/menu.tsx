@@ -1,8 +1,8 @@
 import DesktopMenu from "@/components/header/menu/desktop-menu";
-import { MenuItems } from "@/types/components/header/menu/menu-item.type";
+import { MenuItem } from "@/types/components/header/menu/menu-item.type";
 
 type Props = {
-  items: MenuItems;
+  items: (MenuItem & { label: string })[];
 };
 
 export default function Menu({ items }: Props) {

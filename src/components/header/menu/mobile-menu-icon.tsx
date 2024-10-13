@@ -1,12 +1,12 @@
 "use client";
 
 import MobileMenu from "@/components/header/menu/mobile-menu";
-import { MenuItems } from "@/types/components/header/menu/menu-item.type";
+import { MenuItem } from "@/types/components/header/menu/menu-item.type";
 import { Menu } from "@mui/icons-material";
 import { useDisclosure } from "@nextui-org/modal";
 
 type Props = Readonly<{
-  menuItems: MenuItems;
+  menuItems: (MenuItem & { label: string })[];
   openMenuAriaDescription?: string;
 }>;
 

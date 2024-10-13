@@ -1,7 +1,4 @@
-import {
-  MenuItem,
-  MenuItems,
-} from "@/types/components/header/menu/menu-item.type";
+import { MenuItem } from "@/types/components/header/menu/menu-item.type";
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -9,7 +6,7 @@ import styles from "./menu-item.module.css";
 
 type Props = {
   className?: string;
-  items: MenuItems;
+  items: (MenuItem & { label: string })[];
 };
 
 export default function DesktopMenu({ className, items }: Props) {
@@ -24,13 +21,13 @@ export default function DesktopMenu({ className, items }: Props) {
   );
 }
 
-const Item = (item: MenuItem) => {
+const Item = (item: MenuItem & { label: string }) => {
   if (item.href)
     return (
       <Link className="text-md" href={item.href}>
-        {item.i18nKey}
+        {item.label}
       </Link>
     );
 
-  return <p className="text-md">{item.i18nKey}</p>;
+  return <p className="text-md">{item.label}</p>;
 };

@@ -7,6 +7,23 @@
     "menu": {
       "mobile": {
         "Open": "Open mobile menu"
+      },
+      "items": {
+        "account": {
+          "Text": "Account"
+        },
+        "keyboards": {
+          "Text": "Keyboards"
+        },
+        "headsets": {
+          "Text": "Headsets"
+        },
+        "non-mechanic": {
+          "Text": "Non mechanic"
+        },
+        "mechanic": {
+          "Text": "Mechanic"
+        }
       }
     }
   }
