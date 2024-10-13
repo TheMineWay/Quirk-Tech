@@ -23,13 +23,34 @@
     box-shadow: -2px 0 5px rgb(0 0 0 / 50%);
     height: 100%;
     max-width: 90vw;
+    overflow: hidden;
     position: fixed;
     top: 0;
-    transition: right 0.3s ease;
-
-    /* Hidden initially */
+    transition: transform 0.3s ease;
     z-index: 10;
 }
+
+/* Drawer for right position */
+.drawer.right {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.drawer.right.open {
+    transform: translateX(0);
+}
+
+/* Drawer for left position */
+.drawer.left {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.drawer.left.open {
+    transform: translateX(0);
+}
+
+/* Sizes */
 
 .drawer-md {
     right: -24em;
@@ -50,13 +71,35 @@
     right: 0;
 }
 
+.header {
+    align-items: center;
+    display: flex;
+    gap: .25em;
+    padding: .5em 1em;
+}
+
+
+.left .header {
+    flex-direction: row;
+    justify-content: end;
+}
+
+.right .header {
+    flex-direction: row-reverse;
+    justify-content: start;
+}
+
+.title {
+    text-align: left;
+    width: 100%;
+}
+
 /* Close Button */
 .close-btn {
     border: none;
     color: var(--foreground);
     cursor: pointer;
-    margin: 10px;
-    padding: 8px;
+    margin: 0.5em;
 }
 
 .drawer-content {
