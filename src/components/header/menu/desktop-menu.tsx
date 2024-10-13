@@ -2,7 +2,7 @@ import { MenuItem } from "@/types/components/header/menu/menu-item.type";
 import Link from "next/link";
 import clsx from "clsx";
 
-import styles from "./menu-item.module.css";
+import styles from "./desktop-menu.module.css";
 
 type Props = {
   className?: string;

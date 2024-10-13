@@ -13,6 +13,7 @@ type DrawerProps = {
   size?: DrawerSize;
   position?: DrawerPosition;
   title?: string;
+  showHeader?: boolean;
   children?: ReactNode;
 };
 
@@ -22,6 +23,7 @@ const Drawer: React.FC<DrawerProps> = ({
   size = "md",
   position = "left",
   title,
+  showHeader = true,
   children,
 }) => {
   return (
@@ -39,12 +41,14 @@ const Drawer: React.FC<DrawerProps> = ({
           styles[`drawer-${size}`]
         )}
       >
-        <div className={styles.header}>
-          {title && <h1 className={styles.title}>{title}</h1>}
-          <button className={styles["close-btn"]} onClick={toggleDrawer}>
-            <Close />
-          </button>
-        </div>
+        {showHeader && (
+          <div className={styles.header}>
+            {title && <h1 className={styles.title}>{title}</h1>}
+            <button className={styles["close-btn"]} onClick={toggleDrawer}>
+              <Close />
+            </button>
+          </div>
+        )}
         <div className={styles["drawer-content"]}>{children}</div>
       </div>
     </>
