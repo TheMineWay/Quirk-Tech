@@ -6,6 +6,11 @@
     transition: border-bottom-width 0.3s ease;
 }
 
+.search::placeholder {
+    color: var(--foreground);
+    opacity: .8;
+}
+
 .button {
     background-color: var(--primary);
     border-bottom-left-radius: 0;

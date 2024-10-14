@@ -18,7 +18,7 @@ export default function MobileMenuIcon({
 
   return (
     <>
-      <button onClick={onOpen} aria-roledescription={openMenuAriaDescription}>
+      <button onClick={onOpen} aria-label={openMenuAriaDescription}>
         <Menu />
       </button>
       <MobileMenu

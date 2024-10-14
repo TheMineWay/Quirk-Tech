@@ -4,7 +4,7 @@ import { Close } from "@mui/icons-material";
 
 import styles from "./drawer.module.css";
 
-type DrawerSize = "md" | "lg" | "xl";
+type DrawerSize = "sm" | "md" | "lg" | "xl";
 type DrawerPosition = "left" | "right";
 
 type DrawerProps = {

@@ -4,6 +4,7 @@ import { useDisclosure } from "@nextui-org/modal";
 import Link from "next/link";
 
 import styles from "./mobile-menu.module.css";
+import clsx from "clsx";
 
 type Props = {
   isOpen?: boolean;
@@ -13,10 +14,17 @@ type Props = {
 export default function MobileMenu({ isOpen, onOpenChange, menuItems }: Props) {
   return (
     <>
-      <Drawer showHeader={false} isOpen={isOpen} toggleDrawer={onOpenChange}>
+      <Drawer
+        size="sm"
+        showHeader={false}
+        isOpen={isOpen}
+        toggleDrawer={onOpenChange}
+      >
         <ul className="flex flex-col gap-2">
           {menuItems.map((item) => (
-            <Item className={styles.item} key={item.id} item={item} />
+            <li key={item.id}>
+              <Item className={clsx(styles.item, "pb-2")} item={item} />
+            </li>
           ))}
         </ul>
       </Drawer>
