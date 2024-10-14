@@ -3,11 +3,14 @@ import { GitHub, LinkedIn, X, YouTube } from "@mui/icons-material";
 import { ReactNode } from "react";
 import Link from "next/link";
 import { SOCIAL } from "@/constants/social/social.constant";
-
-import styles from "./footer.module.css";
 import { CONFIG } from "@/constants/config/config.constant";
 import { LangProps } from "@/types/i18n/lang-props.type";
 import { getDictionary } from "@/i18n/dictionary.util";
+import Image from "next/image";
+
+import logo from "@/assets/branding/logo/logo.png";
+
+import styles from "./footer.module.css";
 
 type Props = {
   className?: string;
@@ -15,6 +18,22 @@ type Props = {
 
 export default async function Footer({ className, lang }: Props) {
   const { layout } = await getDictionary(lang);
+  const { links } = layout.footer;
+
+  const footerLinks: Links = {
+    [links.legal.Title]: [
+      {
+        text: links.legal.items.Terms,
+        href: "/terms-and-conditions",
+        blank: true,
+      },
+      {
+        text: links.legal.items.Privacy,
+        href: "/privacy",
+        blank: true,
+      },
+    ],
+  };
 
   return (
     <footer
@@ -24,18 +43,56 @@ export default async function Footer({ className, lang }: Props) {
         styles.footer
       )}
     >
-      <div>CONTENT</div>
+      <Content slogan={layout.Slogan} links={footerLinks} />
       <hr />
       <div className="flex gap-4 justify-between items-center">
         <small>
-          © {new Date().getFullYear()} {CONFIG.COMPANY_NAME}.{" "}
-          {layout.footer.Copyright}.
+          © {getCurrentYear()} {CONFIG.COMPANY_NAME}. {layout.footer.Copyright}.
         </small>
         <Social />
       </div>
     </footer>
   );
 }
+
+type LinkItem = { text: string; href: string; blank?: boolean };
+type Links = Record<string, LinkItem[]>;
+
+type ContentProps = {
+  slogan: string;
+  links: Links;
+};
+
+const Content = ({ slogan, links }: ContentProps) => {
+  return (
+    <div className="flex flex-col md:flex-row gap-4 justify-between md:mb-4">
+      <div className="flex flex-col gap-4">
+        <Image src={logo} height={32} alt="Logo" />
+        <p className="text-2xl font-bold">{slogan}</p>
+        <p className="text-sm">
+          {CONFIG.COMPANY_NAME}, {getCurrentYear()}.
+        </p>
+      </div>
+      <hr className="block md:hidden" />
+      <div className="flex flex-col gap-2">
+        {Object.entries(links).map(([title, items], i) => (
+          <div key={i}>
+            <h1 className="font-bold">{title}</h1>
+            <ul>
+              {items.map(({ text, href, blank }, i) => (
+                <li key={i} className="pt-4">
+                  <Link target={blank ? "_blank" : undefined} href={href}>
+                    {text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Social = () => {
   const items: { icon: ReactNode; href: string | null; a11yLabel: string }[] = [
@@ -57,3 +114,5 @@ const Social = () => {
     </div>
   );
 };
+
+const getCurrentYear = () => new Date().getFullYear();

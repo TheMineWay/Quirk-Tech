@@ -1,5 +1,6 @@
 {
   "Title": "Quirk Tech",
+  "Slogan": "The only store where ‘WTF’ is a compliment!",
   "header": {
     "search": {
       "Placeholder": "Search",
@@ -37,7 +38,16 @@
     }
   },
   "footer": {
-    "Copyright": "All rights reserved"
+    "Copyright": "All rights reserved",
+    "links": {
+      "legal": {
+        "Title": "Legal",
+        "items": {
+          "Terms": "Terms and conditions",
+          "Privacy": "Privacy policy"
+        }
+      }
+    }
   },
   "seo": {
     "Description": "Weird and not useful tech gadgets. Also, this is a dummy website that does not sell anything.",

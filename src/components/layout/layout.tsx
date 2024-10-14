@@ -12,7 +12,7 @@ export default function Layout({ lang, children }: Props) {
   return (
     <div className={styles.layout}>
       <Header lang={lang} />
-      <main className={clsx("dark text-foreground mt-4 px-6", styles.content)}>
+      <main className={clsx("dark text-foreground mt-10 px-6", styles.content)}>
         {children}
       </main>
       <Footer lang={lang} />
