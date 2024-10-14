@@ -15,14 +15,14 @@ export default async function HeaderExtraActions({ lang }: Props) {
   return (
     <div className="h-10 md:h-14 max-w-24 gap-1 flex items-center content-center">
       <Link
-        aria-roledescription={layout.header.actions.cart.a11y}
+        aria-label={layout.header.actions.cart.a11y}
         href="/"
         className={linkClassName}
       >
         <ShoppingCart />
       </Link>
       <Link
-        aria-roledescription={layout.header.actions.account.a11y}
+        aria-label={layout.header.actions.account.a11y}
         href="/"
         className={linkClassName}
       >
