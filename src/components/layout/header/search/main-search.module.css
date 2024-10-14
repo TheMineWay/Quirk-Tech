@@ -12,8 +12,8 @@
 }
 
 .button {
-    background-color: var(--primary);
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    color: var(--primary-foreground)
+    background-color: var(--primary) !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    color: var(--primary-foreground) !important;
 }

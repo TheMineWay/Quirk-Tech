@@ -1,5 +1,6 @@
 {
   "Title": "Quirk Tech",
+  "Slogan": "The only store where ‘WTF’ is a compliment!",
   "header": {
     "search": {
       "Placeholder": "Search",
@@ -33,6 +34,18 @@
       },
       "account": {
         "a11y": "Account"
+      }
+    }
+  },
+  "footer": {
+    "Copyright": "All rights reserved",
+    "links": {
+      "legal": {
+        "Title": "Legal",
+        "items": {
+          "Terms": "Terms and conditions",
+          "Privacy": "Privacy policy"
+        }
       }
     }
   },

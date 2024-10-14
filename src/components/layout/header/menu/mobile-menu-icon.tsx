@@ -1,6 +1,6 @@
 "use client";
 
-import MobileMenu from "@/components/header/menu/mobile-menu";
+import MobileMenu from "@/components/layout/header/menu/mobile-menu";
 import { MenuItem } from "@/types/components/header/menu/menu-item.type";
 import { Menu } from "@mui/icons-material";
 import { useDisclosure } from "@nextui-org/modal";

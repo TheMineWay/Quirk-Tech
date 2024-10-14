@@ -1,0 +1,91 @@
+{
+  "terms-and-conditions": {
+    "Title": "Terms and Conditions of Quirktech",
+    "sections": {
+      "introduction": {
+        "Title": "Introduction",
+        "Content": "These Terms and Conditions govern the access and use of the Quirktech website (hereinafter referred to as 'the Site'). By accessing and using the Site, you agree to comply with these terms. If you do not agree, do not use the Site."
+      },
+      "use-of-site": {
+        "Title": "Use of the Site",
+        "Content": "Quirktech provides a platform for viewing products and educational content. No sales are made. You agree to use the Site legally and respectfully."
+      },
+      "intellectual-property": {
+        "Title": "Intellectual Property",
+        "Content": "All content on the Site, including text, images, graphics, and design, is protected by intellectual property rights. Reproduction, distribution, or modification without explicit permission from Quirktech is prohibited."
+      },
+      "limitation-of-liability": {
+        "Title": "Limitation of Liability",
+        "Content": "Quirktech is not liable for any damages or losses that may result from the use of the Site, including viruses or errors. Your use of the Site is at your own risk."
+      },
+      "changes-to-terms": {
+        "Title": "Changes to the Terms",
+        "Content": "Quirktech reserves the right to modify these Terms at any time. Changes will take effect once published on the Site."
+      },
+      "applicable-law": {
+        "Title": "Applicable Law",
+        "Content": "These Terms are governed by Spanish law. Any disputes will be resolved in the courts of Badalona."
+      }
+    }
+  },
+  "privacy-policy": {
+    "Title": "Privacy Policy of Quirktech",
+    "sections": {
+      "introduction": {
+        "Title": "Introduction",
+        "Content": "This Privacy Policy outlines how Quirktech collects, uses, and protects personal information obtained when you use our Site."
+      },
+      "information-we-collect": {
+        "Title": "Information We Collect",
+        "Content": "We collect personal information that you provide when registering or submitting contact forms, such as your name and email address."
+      },
+      "use-of-information": {
+        "Title": "Use of Information",
+        "Content": "The information collected is used to respond to your inquiries, improve our services, and send you information related to Quirktech."
+      },
+      "cookies": {
+        "Title": "Cookies",
+        "Content": "The Site uses cookies to enhance user experience. You can choose to accept or reject cookies through your browser settings. For more details, please refer to our cookie policy."
+      },
+      "data-protection": {
+        "Title": "Data Protection",
+        "Content": "We implement security measures to protect personal information. However, we cannot guarantee the complete security of data transmitted over the Internet."
+      },
+      "user-rights": {
+        "Title": "User Rights",
+        "Content": "You have the right to access, rectify, or delete your personal data. You can exercise these rights by sending us an email at data@quirktech.pro."
+      },
+      "changes-to-privacy-policy": {
+        "Title": "Changes to the Privacy Policy",
+        "Content": "Quirktech reserves the right to modify this Privacy Policy at any time. Changes will take effect once published on the Site."
+      },
+      "contact": {
+        "Title": "Contact",
+        "Content": "If you have questions about this Privacy Policy, please contact us at privacy@quirktech.pro."
+      }
+    }
+  },
+  "cookies": {
+    "Title": "Cookie Notice of Quirktech",
+    "sections": {
+      "introduction": {
+        "Title": "Introduction",
+        "Content": "This Cookie Notice explains how Quirktech uses cookies to ensure the proper functioning of the Site, enhance user experience, and analyze site performance. Cookies are small text files stored on your device that help improve our services. By using our Site, you consent to the use of cookies as described in this notice. You have control over non-essential cookies through your browser settings or through our cookie consent banner."
+      },
+      "operative-cookies": {
+        "Title": "Operative Cookies",
+        "Content": "Operative cookies are essential for the Site's operation, allowing for basic functionalities such as page navigation, secure login, and accessing restricted content. These cookies are critical for maintaining the security of our Site and for remembering your privacy preferences, ensuring that your session remains active. Operative cookies are always active and cannot be disabled as they are needed for the Site to function properly. They do not collect any personal information and are only used to deliver services that you have requested, like remembering your items in the shopping cart."
+      },
+      "analytical-cookies": {
+        "Title": "Analytical Cookies",
+        "Content": "We use analytical cookies, such as Google Analytics, to collect data on how users engage with our Site. These cookies provide insights into visitor behavior, which helps us refine our website's design, features, and overall user experience. They track metrics such as page views, session duration, bounce rates, and traffic sources. Additionally, we may use A/B testing cookies within this category to optimize different versions of the Site and improve performance by experimenting with new features. All data collected by these cookies is aggregated and anonymous, meaning no personally identifiable information is stored."
+      }
+    }
+  },
+  "legal-message": {
+    "Title": "Cookies notice",
+    "Cookies": "We use cookies to enhance your experience on Quirktech. These include essential technical cookies necessary for the proper functioning of the site, as well as third-party cookies, such as Google Analytics, to analyze traffic and improve our services. By continuing to browse, you consent to our use of cookies. For more details about the cookies we use and how you can manage them, please refer to our",
+    "Cookie-notice": "Cookie Notice",
+    "Dummy": "Please note that this is a dummy website for educational purposes, and real purchases are not possible."
+  }
+}

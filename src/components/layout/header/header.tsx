@@ -1,13 +1,13 @@
-import MainSearch from "@/components/header/search/main-search";
+import MainSearch from "@/components/layout/header/search/main-search";
 import Image from "next/image";
 import { HeaderMenuItemsRepository } from "@/db/repository/configs/header-menu-items.repository";
 import NodeCache from "node-cache";
 import { HeaderMenuItemsSelect } from "@/db/schema/configs/header-menu-items.table";
 import Link from "next/link";
 import { LangProps } from "@/types/i18n/lang-props.type";
-import HeaderExtraActions from "@/components/header/extra-actions/header-extra-actions";
-import HeaderMenu from "@/components/header/menu/menu";
-import MobileMenuIcon from "@/components/header/menu/mobile-menu-icon";
+import HeaderExtraActions from "@/components/layout/header/extra-actions/header-extra-actions";
+import HeaderMenu from "@/components/layout/header/menu/menu";
+import MobileMenuIcon from "@/components/layout/header/menu/mobile-menu-icon";
 import { getDictionary } from "@/i18n/dictionary.util";
 
 import logo from "@/assets/branding/logo/logo.png";
