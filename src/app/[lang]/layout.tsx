@@ -7,6 +7,8 @@ import { getDictionary } from "@/i18n/dictionary.util";
 import { I18nParams } from "@/types/i18n/i18n-params.type";
 import Header from "@/components/header/header";
 import { NextUIProvider } from "@nextui-org/system";
+import { CONFIG } from "@/constants/config/config.constant";
+
 import "@/app/globals.css";
 
 export async function generateMetadata({
@@ -20,7 +22,7 @@ export async function generateMetadata({
     keywords: ["Ecommerce", "Technology"],
     alternates: {
       languages: LOCALES.reduce((prev, locale) => {
-        prev[locale] = `/${locale}`;
+        prev[locale] = `${CONFIG.BASE_URL}${locale}`;
         return prev;
       }, {} as Record<Locale, string>),
     },
