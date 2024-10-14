@@ -56,7 +56,7 @@ export default function RootLayout({
 >) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>
+      <body className="antialiased">
         <NextUIProvider>
           <Header lang={lang} />
           <main className="dark text-foreground bg-background">{children}</main>

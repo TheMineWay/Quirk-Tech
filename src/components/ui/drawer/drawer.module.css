@@ -52,6 +52,11 @@
 
 /* Sizes */
 
+.drawer-sm {
+    right: -16em;
+    width: 16em;
+}
+
 .drawer-md {
     right: -24em;
     width: 24em;
