@@ -59,7 +59,7 @@ export default function RootLayout({
       <body className="antialiased">
         <NextUIProvider>
           <Header lang={lang} />
-          <main className="dark text-foreground bg-background">{children}</main>
+          <main className="dark text-foreground mt-4 px-6">{children}</main>
         </NextUIProvider>
       </body>
       {GA_ID && <GoogleAnalytics gaId={GA_ID} />}

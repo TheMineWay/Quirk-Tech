@@ -1,0 +1,68 @@
+{
+  "terms-and-conditions": {
+    "Title": "Terms and Conditions of Quirktech",
+    "sections": {
+      "introduction": {
+        "Title": "Introduction",
+        "Content": "These Terms and Conditions govern the access and use of the Quirktech website (hereinafter referred to as 'the Site'). By accessing and using the Site, you agree to comply with these terms. If you do not agree, do not use the Site."
+      },
+      "use_of_site": {
+        "Title": "Use of the Site",
+        "Content": "Quirktech provides a platform for viewing products and educational content. No sales are made. You agree to use the Site legally and respectfully."
+      },
+      "intellectual_property": {
+        "Title": "Intellectual Property",
+        "Content": "All content on the Site, including text, images, graphics, and design, is protected by intellectual property rights. Reproduction, distribution, or modification without explicit permission from Quirktech is prohibited."
+      },
+      "limitation_of_liability": {
+        "Title": "Limitation of Liability",
+        "Content": "Quirktech is not liable for any damages or losses that may result from the use of the Site, including viruses or errors. Your use of the Site is at your own risk."
+      },
+      "changes_to_terms": {
+        "Title": "Changes to the Terms",
+        "Content": "Quirktech reserves the right to modify these Terms at any time. Changes will take effect once published on the Site."
+      },
+      "applicable_law": {
+        "Title": "Applicable Law",
+        "Content": "These Terms are governed by Spanish law. Any disputes will be resolved in the courts of Badalona."
+      }
+    }
+  },
+  "privacy-policy": {
+    "Title": "Privacy Policy of Quirktech",
+    "sections": {
+      "introduction": {
+        "Title": "Introduction",
+        "Content": "This Privacy Policy outlines how Quirktech collects, uses, and protects personal information obtained when you use our Site."
+      },
+      "information_we_collect": {
+        "Title": "Information We Collect",
+        "Content": "We collect personal information that you provide when registering or submitting contact forms, such as your name and email address."
+      },
+      "use_of_information": {
+        "Title": "Use of Information",
+        "Content": "The information collected is used to respond to your inquiries, improve our services, and send you information related to Quirktech."
+      },
+      "cookies": {
+        "Title": "Cookies",
+        "Content": "The Site uses cookies to enhance user experience. You can choose to accept or reject cookies through your browser settings. For more details, please refer to our cookie policy."
+      },
+      "data_protection": {
+        "Title": "Data Protection",
+        "Content": "We implement security measures to protect personal information. However, we cannot guarantee the complete security of data transmitted over the Internet."
+      },
+      "user_rights": {
+        "Title": "User Rights",
+        "Content": "You have the right to access, rectify, or delete your personal data. You can exercise these rights by sending us an email at data@quirktech.pro."
+      },
+      "changes_to_privacy_policy": {
+        "Title": "Changes to the Privacy Policy",
+        "Content": "Quirktech reserves the right to modify this Privacy Policy at any time. Changes will take effect once published on the Site."
+      },
+      "contact": {
+        "Title": "Contact",
+        "Content": "If you have questions about this Privacy Policy, please contact us at privacy@quirktech.pro."
+      }
+    }
+  }
+}
