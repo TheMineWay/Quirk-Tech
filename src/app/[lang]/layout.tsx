@@ -10,6 +10,8 @@ import { NextUIProvider } from "@nextui-org/system";
 import { CONFIG } from "@/constants/config/config.constant";
 import { ROBOTS_METADATA } from "@/constants/config/robots-metadata.constant";
 
+import pageBanner from "@/assets/branding/logo/logo.png";
+
 import "@/app/globals.css";
 
 export async function generateMetadata({
@@ -19,8 +21,8 @@ export async function generateMetadata({
 
   return {
     title: layout.Title,
-    description: `Tech ecommerce (fake website).`,
-    keywords: ["Ecommerce", "Technology"],
+    description: layout.seo.Description,
+    keywords: Object.values(layout.seo.keywords),
     alternates: {
       languages: LOCALES.reduce((prev, locale) => {
         prev[locale] = `${CONFIG.BASE_URL}${locale}`;
@@ -28,6 +30,19 @@ export async function generateMetadata({
       }, {} as Record<Locale, string>),
     },
     robots: ROBOTS_METADATA.default,
+    openGraph: {
+      title: layout.Title,
+      description: layout.seo.Description,
+      url: CONFIG.BASE_URL,
+      images: [
+        {
+          url: pageBanner.src,
+          width: 800,
+          height: 600,
+          alt: layout.seo.banner.Alt,
+        },
+      ],
+    },
   };
 }
 
