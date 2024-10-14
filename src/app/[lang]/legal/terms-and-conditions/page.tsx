@@ -18,13 +18,7 @@ export default async function Page({ params: { lang } }: Props) {
   return <LegalViewer info={legalInfo} />;
 }
 
-export async function getStaticPaths() {
-  const paths = LOCALES.map((lang) => ({
-    params: { lang },
+export const generateStaticParams = () =>
+  LOCALES.map((lang) => ({
+    lang,
   }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
