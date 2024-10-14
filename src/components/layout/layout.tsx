@@ -7,6 +7,8 @@ import clsx from "clsx";
 import { getDictionary } from "@/i18n/dictionary.util";
 
 import styles from "./layout.module.css";
+import { cookies } from "next/headers";
+import { COOKIES } from "@/constants/cookies.constant";
 
 type Props = { children: ReactNode } & LangProps;
 
@@ -14,6 +16,7 @@ const margin = "px-4 md:px-6";
 
 export default async function Layout({ lang, children }: Props) {
   const { legal, common } = await getDictionary(lang);
+  const cookiesJar = cookies();
 
   return (
     <div className={styles.layout}>
@@ -28,12 +31,14 @@ export default async function Layout({ lang, children }: Props) {
         {children}
       </main>
       <Footer className={clsx("container mx-auto", margin)} lang={lang} />
-      <LegalMessage
-        i18n={{
-          message: legal["legal-message"],
-          accept: common.actions.Accept,
-        }}
-      />
+      {cookiesJar.get(COOKIES.cookiesConsent)?.value !== "true" && (
+        <LegalMessage
+          i18n={{
+            message: legal["legal-message"],
+            accept: common.actions.Accept,
+          }}
+        />
+      )}
     </div>
   );
 }

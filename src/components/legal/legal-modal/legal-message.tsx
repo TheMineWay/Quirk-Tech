@@ -1,5 +1,5 @@
 "use client";
-import { Card, CardBody } from "@nextui-org/card";
+import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import clsx from "clsx";
 import { Button } from "@nextui-org/button";
 
@@ -7,16 +7,22 @@ import styles from "./legal-message.module.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes/routes.constant";
+import { COOKIES } from "@/constants/cookies.constant";
 
 type Props = {
   i18n: {
-    message: { Cookies: string; Dummy: string; "Cookie-notice": string };
+    message: {
+      Cookies: string;
+      Dummy: string;
+      "Cookie-notice": string;
+      Title: string;
+    };
     accept: string;
   };
 };
 
 export default function LegalMessage({ i18n }: Props) {
-  const [accepted, setAccepted] = useState(getCookieConsent());
+  const [accepted, setAccepted] = useState(false);
 
   useEffect(() => {
     if (accepted) setCookieConsent(true);
@@ -27,6 +33,9 @@ export default function LegalMessage({ i18n }: Props) {
   return (
     <div className={clsx(styles.notification, "container mx-auto")}>
       <Card className="mb-8 mx-4 md:mx-0 p-2">
+        <CardHeader>
+          <h1 className="font-bold text-xl">{i18n.message.Title}</h1>
+        </CardHeader>
         <CardBody className="flex flex-col gap-2 text-justify">
           <p>
             {i18n.message.Cookies}{" "}
@@ -48,27 +57,11 @@ export default function LegalMessage({ i18n }: Props) {
 
 const setCookieConsent = (value: boolean): void => {
   const consentValue = value ? "true" : "false";
-  const cookieName = "cookieConsent";
   const expiryDays = 365; // Cookie will last 1 year
 
   const date = new Date();
   date.setTime(date.getTime() + expiryDays * 24 * 60 * 60 * 1000); // Set the expiration date
   const expires = `expires=${date.toUTCString()}`;
 
-  document.cookie = `${cookieName}=${consentValue}; ${expires}; path=/`;
-};
-
-const getCookieConsent = (): boolean => {
-  const cookieName = "cookieConsent=";
-  const decodedCookie = decodeURIComponent(document.cookie);
-  const cookieArray = decodedCookie.split(";");
-
-  for (let i = 0; i < cookieArray.length; i++) {
-    const cookie = cookieArray[i].trim();
-    if (cookie.indexOf(cookieName) === 0) {
-      return cookie.substring(cookieName.length, cookie.length) === "true";
-    }
-  }
-
-  return false; // Default to false if cookie not found
+  document.cookie = `${COOKIES.cookiesConsent}=${consentValue}; ${expires}; path=/; SameSite=Lax`;
 };
