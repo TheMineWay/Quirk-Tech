@@ -37,3 +37,7 @@ next-env.d.ts
 
 # Env
 .env
+
+# Generated files
+/public/robots.txt
+/public/sitemap.xml

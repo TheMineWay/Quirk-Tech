@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "npm run sitemap:generate",
     "start": "next start",
     "lint": "next lint",
     "lint:css": "stylelint '**/*.{css,scss,pcss}'",
     "lint:css:fix": "stylelint '**/*.{css,scss}' --fix",
+    "sitemap:generate": "next-sitemap",
     "db:dev:push": "npx drizzle-kit push",
     "db:generate": "npx drizzle-kit generate",
     "db:migrate": "npx drizzle-kit migrate",
