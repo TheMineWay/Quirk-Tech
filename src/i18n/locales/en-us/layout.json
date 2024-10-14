@@ -36,6 +36,9 @@
       }
     }
   },
+  "footer": {
+    "Copyright": "All rights reserved"
+  },
   "seo": {
     "Description": "Weird and not useful tech gadgets. Also, this is a dummy website that does not sell anything.",
     "keywords": {

@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://quirk-tech.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheMineWay/Quirk-Tech"
+  },
+  "author": {
+    "name": "Joel Campos",
+    "url": "https://www.linkedin.com/in/joelcamposoliva/"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

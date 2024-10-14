@@ -15,7 +15,7 @@ export default function Layout({ lang, children }: Props) {
       <main className={clsx("dark text-foreground mt-4 px-6", styles.content)}>
         {children}
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 }
