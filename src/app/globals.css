@@ -6,7 +6,7 @@
 :root {
   --background: #fff;
   --foreground: #171717;
-  --primary: #AE7EDE;
+  --primary: #7828C8;
   --primary-foreground: #FFF;
 }
 
@@ -14,7 +14,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --primary: #AE7EDE;
+    --primary: #7828C8;
     --primary-foreground: #FFF;
   }
 }
