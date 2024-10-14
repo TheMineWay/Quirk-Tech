@@ -38,7 +38,7 @@ export default async function Footer({ className, lang }: Props) {
   return (
     <footer
       className={clsx(
-        "mt-4 px-14 pt-14 pb-8 flex flex-col gap-4",
+        "mt-4 pt-14 pb-8 flex flex-col gap-4",
         className,
         styles.footer
       )}
@@ -66,9 +66,9 @@ type ContentProps = {
 const Content = ({ slogan, links }: ContentProps) => {
   return (
     <div className="flex flex-col md:flex-row gap-4 justify-between md:mb-4">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 items-center md:items-start">
         <Image src={logo} height={32} alt="Logo" />
-        <p className="text-2xl font-bold">{slogan}</p>
+        <p className="text-2xl font-bold text-center md:text-left">{slogan}</p>
         <p className="text-sm">
           {CONFIG.COMPANY_NAME}, {getCurrentYear()}.
         </p>

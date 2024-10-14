@@ -8,14 +8,22 @@ import styles from "./layout.module.css";
 
 type Props = { children: ReactNode } & LangProps;
 
+const margin = "px-4 md:px-6";
+
 export default function Layout({ lang, children }: Props) {
   return (
     <div className={styles.layout}>
       <Header lang={lang} />
-      <main className={clsx("dark text-foreground mt-10 px-6", styles.content)}>
+      <main
+        className={clsx(
+          "container mx-auto dark text-foreground mt-10",
+          styles.content,
+          margin
+        )}
+      >
         {children}
       </main>
-      <Footer lang={lang} />
+      <Footer className={clsx("container mx-auto", margin)} lang={lang} />
     </div>
   );
 }
