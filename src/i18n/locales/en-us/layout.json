@@ -35,5 +35,16 @@
         "a11y": "Account"
       }
     }
+  },
+  "seo": {
+    "Description": "Weird and not useful tech gadgets. Also, this is a dummy website that does not sell anything.",
+    "keywords": {
+      "0": "Ecommerce",
+      "1": "Technology",
+      "2": "Gadgets"
+    },
+    "banner": {
+      "Alt": "Quirktech promotional banner"
+    }
   }
 }

@@ -3,6 +3,8 @@ import { LOCALES } from "@/constants/i18n/locales";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+const PUBLIC_FILE = /\.(.*)$/;
+
 // Get the preferred locale, this function should return a valid locale string
 function getLocale(request: NextRequest): string {
   const acceptLanguage = request.headers.get("accept-language") || "";
@@ -15,6 +17,15 @@ function getLocale(request: NextRequest): string {
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (
+    request.nextUrl.pathname.startsWith("/_next") ||
+    request.nextUrl.pathname.includes("/api/") ||
+    PUBLIC_FILE.test(request.nextUrl.pathname) ||
+    request.nextUrl.pathname.includes("robots.txt")
+  ) {
+    return;
+  }
 
   // Check if the pathname has a supported locale
   const pathnameHasLocale = LOCALES.some(

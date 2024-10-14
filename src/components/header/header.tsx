@@ -47,9 +47,13 @@ export default async function Header({ lang }: Readonly<LangProps>) {
           openMenuAriaDescription={layout.header.menu.mobile.Open}
         />
       </div>
-      <div className="hidden md:block h-14 max-w-24">
+      <div className="hidden md:block h-14">
         <Link href="/">
-          <Image className="h-full w-full" alt="Quirktech logo" src={logo} />
+          <Image
+            className="h-14 w-16 object-contain"
+            alt="Quirktech logo"
+            src={logo}
+          />
         </Link>
       </div>
       <nav className="h-10 md:h-20 w-full gap-1 flex flex-col justify-between">
