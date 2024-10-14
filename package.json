@@ -43,7 +43,7 @@
     "eslint-config-next": "14.2.14",
     "postcss": "^8",
     "postcss-syntax": "^0.36.2",
-    "stylelint": "^16.9.0",
+    "stylelint": "^16.10.0",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-config-tailwindcss": "^0.0.7",
     "stylelint-order": "^6.0.4",
