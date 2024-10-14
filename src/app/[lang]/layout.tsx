@@ -5,10 +5,10 @@ import { LOCALES } from "@/constants/i18n/locales";
 import { Locale } from "@/constants/i18n/locale.enum";
 import { getDictionary } from "@/i18n/dictionary.util";
 import { I18nParams } from "@/types/i18n/i18n-params.type";
-import Header from "@/components/header/header";
 import { NextUIProvider } from "@nextui-org/system";
 import { CONFIG } from "@/constants/config/config.constant";
 import { ROBOTS_METADATA } from "@/constants/config/robots-metadata.constant";
+import Layout from "@/components/layout/layout";
 
 import pageBanner from "@/assets/branding/logo/logo.png";
 
@@ -58,8 +58,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <NextUIProvider>
-          <Header lang={lang} />
-          <main className="dark text-foreground mt-4 px-6">{children}</main>
+          <Layout lang={lang}>{children}</Layout>
         </NextUIProvider>
       </body>
       {GA_ID && <GoogleAnalytics gaId={GA_ID} />}

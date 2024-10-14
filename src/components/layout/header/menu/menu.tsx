@@ -1,4 +1,4 @@
-import DesktopMenu from "@/components/header/menu/desktop-menu";
+import DesktopMenu from "@/components/layout/header/menu/desktop-menu";
 import { MenuItem } from "@/types/components/header/menu/menu-item.type";
 
 type Props = {
