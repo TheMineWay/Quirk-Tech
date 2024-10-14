@@ -8,6 +8,7 @@ import { I18nParams } from "@/types/i18n/i18n-params.type";
 import Header from "@/components/header/header";
 import { NextUIProvider } from "@nextui-org/system";
 import { CONFIG } from "@/constants/config/config.constant";
+import { ROBOTS_METADATA } from "@/constants/config/robots-metadata.constant";
 
 import "@/app/globals.css";
 
@@ -26,6 +27,7 @@ export async function generateMetadata({
         return prev;
       }, {} as Record<Locale, string>),
     },
+    robots: ROBOTS_METADATA.default,
   };
 }
 
