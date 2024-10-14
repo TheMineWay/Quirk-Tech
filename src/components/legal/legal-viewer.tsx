@@ -27,7 +27,7 @@ const Item = ({
   item: LegalInfo["parts"][number];
   index: number;
 }) => (
-  <li className="mt-2">
+  <li className="mt-4">
     <h2 className="font-bold text-lg">
       {index}. {title}
     </h2>

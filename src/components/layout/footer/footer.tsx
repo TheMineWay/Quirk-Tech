@@ -11,6 +11,7 @@ import Image from "next/image";
 import logo from "@/assets/branding/logo/logo.png";
 
 import styles from "./footer.module.css";
+import { ROUTES } from "@/constants/routes/routes.constant";
 
 type Props = {
   className?: string;
@@ -24,12 +25,12 @@ export default async function Footer({ className, lang }: Props) {
     [links.legal.Title]: [
       {
         text: links.legal.items.Terms,
-        href: "/terms-and-conditions",
+        href: ROUTES.termsAndConditions(),
         blank: true,
       },
       {
         text: links.legal.items.Privacy,
-        href: "/privacy",
+        href: ROUTES.privacy(),
         blank: true,
       },
     ],
