@@ -28,6 +28,13 @@ type ContentButtonAction = {
 
 type CarouselContentAction = {
   text?: string;
+  color?:
+    | "primary"
+    | "default"
+    | "secondary"
+    | "success"
+    | "warning"
+    | "danger";
 } & (ContentLinkAction | ContentButtonAction);
 
 type CarouselContent = {
@@ -208,7 +215,7 @@ const Content = ({ content }: { content: CarouselContent }) => {
       )}
       {content.action?.type === "button" && (
         <Button
-          color="primary"
+          color={content.action.color ?? "primary"}
           className="max-w-40"
           onClick={content.action.onClick}
         >
@@ -219,7 +226,10 @@ const Content = ({ content }: { content: CarouselContent }) => {
         <Link
           target={content.action.target}
           href={content.action.href}
-          className="link"
+          className={clsx({
+            [`text-${content.action.color}`]: content.action.color,
+            link: !content.action.color,
+          })}
         >
           {content.action.text}
         </Link>
