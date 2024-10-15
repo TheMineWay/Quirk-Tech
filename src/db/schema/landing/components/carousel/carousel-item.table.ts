@@ -3,6 +3,7 @@ import { files } from "@/db/schema";
 import { TABLE_TIMESTAMPS } from "@/db/schema-utils/table-timestamps";
 import { languagesEnum } from "@/db/schema/info/language.enum";
 import { carouselItemCodesEnum } from "@/db/schema/landing/components/carousel/carousel-image-category.enum";
+import { InferSelectModel } from "drizzle-orm";
 import { serial, unique, uuid } from "drizzle-orm/pg-core";
 
 // Table
@@ -19,3 +20,5 @@ export const carouselItems = DB_SCHEMAS.landings.table(
     codePerLang: unique().on(t.code, t.language),
   })
 );
+
+export type CarouselItemsSelect = InferSelectModel<typeof carouselItems>;
