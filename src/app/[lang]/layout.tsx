@@ -70,3 +70,8 @@ export default async function RootLayout({
     </html>
   );
 }
+
+export const generateStaticParams = () =>
+  LOCALES.map((lang) => ({
+    lang,
+  }));
