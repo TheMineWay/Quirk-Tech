@@ -5,11 +5,15 @@ export const userSchema = DB_SCHEMAS.users;
 export const configSchema = DB_SCHEMAS.configs;
 export const landingSchema = DB_SCHEMAS.landings;
 export const infoSchema = DB_SCHEMAS.info;
+export const warehouse = DB_SCHEMAS.warehouse;
 
 // Tables
 
 // --> Info
 export { languagesEnum } from "@/db/schema/info/language.enum";
+
+// --> Warehouse
+export { files } from "@/db/schema/warehouse/file.table";
 
 // -> Users
 export { users } from "@/db/schema/user/user.table";

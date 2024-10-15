@@ -1,9 +1,9 @@
-import { bytea } from "@/db/custom/datatype/bytea.db.datatype";
 import { DB_SCHEMAS } from "@/db/db-schemas";
+import { files } from "@/db/schema";
 import { TABLE_TIMESTAMPS } from "@/db/schema-utils/table-timestamps";
 import { languagesEnum } from "@/db/schema/info/language.enum";
 import { carouselItemCodesEnum } from "@/db/schema/landing/components/carousel/carousel-image-category.enum";
-import { serial, unique } from "drizzle-orm/pg-core";
+import { serial, unique, uuid } from "drizzle-orm/pg-core";
 
 // Table
 export const carouselItems = DB_SCHEMAS.landings.table(
@@ -12,7 +12,7 @@ export const carouselItems = DB_SCHEMAS.landings.table(
     id: serial().primaryKey(),
     code: carouselItemCodesEnum(),
     language: languagesEnum(),
-    image: bytea().notNull(),
+    imageId: uuid().references(() => files.id),
     ...TABLE_TIMESTAMPS,
   },
   (t) => ({

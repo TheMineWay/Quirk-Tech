@@ -5,4 +5,5 @@ export const DB_SCHEMAS = {
   configs: pgSchema("configs"),
   landings: pgSchema("landings"),
   info: pgSchema("info"),
+  warehouse: pgSchema("warehouse"),
 };
