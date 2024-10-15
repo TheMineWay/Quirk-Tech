@@ -1,0 +1,8 @@
+{
+  "carousel": {
+    "a11y": {
+      "Next-slide": "Next carousel slide",
+      "Prev-slide": "Previous carousel slide"
+    }
+  }
+}

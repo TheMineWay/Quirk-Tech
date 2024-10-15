@@ -95,3 +95,14 @@
     margin-right: 1em;
     right: 0;
 }
+
+.content {
+    bottom: 0;
+    padding: 1em;
+    position: absolute;
+    width: 100%;
+}
+
+.content.shadowed {
+    background: linear-gradient(to bottom, transparent, #000);
+}
