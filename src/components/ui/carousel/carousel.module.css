@@ -29,9 +29,7 @@
     }
 }
 
-.buttons {
-    margin-top: 12px;
-}
+/* Thumbnails */
 
 .thumbnails {
     display: flex;
@@ -79,4 +77,21 @@
     &.active {
         transform: scaleX(1);
     }
+}
+
+/* Actions */
+
+.slider .action {
+    position: absolute;
+    top: 50%;
+}
+
+.slider .action.left {
+    left: 0;
+    margin-left: 1em;
+}
+
+.slider .action.right {
+    margin-right: 1em;
+    right: 0;
 }

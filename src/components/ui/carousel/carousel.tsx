@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, PanInfo } from "framer-motion";
 import clsx from "clsx";
 import { Button } from "@nextui-org/button";
-import { ArrowLeft, ArrowRight } from "@mui/icons-material";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 
 import styles from "./carousel.module.css";
 
@@ -78,15 +78,27 @@ const Carousel: React.FC<CarouselProps> = ({
               className={styles.image}
             />
           </AnimatePresence>
+          <button
+            className={clsx(styles.action, styles.left)}
+            onClick={() => swipeToImage(-1)}
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            className={clsx(styles.action, styles.right)}
+            onClick={() => swipeToImage(1)}
+          >
+            <ChevronRight />
+          </button>
         </div>
 
         {actions === "below" && (
           <div className="w-full mt-4 flex flex-cols justify-around">
             <Button onClick={() => swipeToImage(-1)}>
-              <ArrowLeft />
+              <ChevronLeft />
             </Button>
             <Button onClick={() => swipeToImage(1)}>
-              <ArrowRight />
+              <ChevronRight />
             </Button>
           </div>
         )}
@@ -100,7 +112,7 @@ const Carousel: React.FC<CarouselProps> = ({
               onClick={() => skipToImage(i)}
               className={styles["thumbnail-container"]}
             >
-              <img src={image} alt={alt} />
+              <img loading="lazy" src={image} alt={alt} />
               <div
                 className={clsx(styles["active-indicator"], {
                   [styles.active]: i === activeImageIndex,
