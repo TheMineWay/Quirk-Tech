@@ -1,17 +1,18 @@
-import { getDictionary } from "@/i18n/dictionary.util";
 import clsx from "clsx";
 import { Button } from "@nextui-org/button";
-import { LangProps } from "@/types/i18n/lang-props.type";
 import { Search } from "@mui/icons-material";
+import { I18nProps } from "@/types/i18n/i18n-props.type";
 
 import styles from "./main-search.module.css";
 
 type Props = {
   className?: string;
-} & LangProps;
+} & I18nProps;
 
-export default async function MainSearch({ className, lang }: Props) {
-  const { layout } = await getDictionary(lang);
+export default async function MainSearch({ className, i18n }: Props) {
+  const {
+    dictionary: { layout },
+  } = i18n;
 
   return (
     <div className={clsx(className, "w-full flex")}>

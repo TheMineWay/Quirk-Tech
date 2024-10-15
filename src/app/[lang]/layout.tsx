@@ -46,7 +46,7 @@ export async function generateMetadata({
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { lang },
 }: Readonly<
@@ -54,11 +54,16 @@ export default function RootLayout({
     children: React.ReactNode;
   } & I18nParams
 >) {
+  const i18n = {
+    dictionary: await getDictionary(lang),
+    lang,
+  };
+
   return (
     <html lang="en">
       <body className="antialiased">
         <NextUIProvider>
-          <Layout lang={lang}>{children}</Layout>
+          <Layout i18n={i18n}>{children}</Layout>
         </NextUIProvider>
       </body>
       {GA_ID && <GoogleAnalytics gaId={GA_ID} />}

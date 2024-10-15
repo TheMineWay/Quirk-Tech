@@ -4,11 +4,10 @@ import { HeaderMenuItemsRepository } from "@/db/repository/configs/header-menu-i
 import NodeCache from "node-cache";
 import { HeaderMenuItemsSelect } from "@/db/schema/configs/header-menu-items.table";
 import Link from "next/link";
-import { LangProps } from "@/types/i18n/lang-props.type";
 import HeaderExtraActions from "@/components/layout/header/extra-actions/header-extra-actions";
 import HeaderMenu from "@/components/layout/header/menu/menu";
 import MobileMenuIcon from "@/components/layout/header/menu/mobile-menu-icon";
-import { getDictionary } from "@/i18n/dictionary.util";
+import { I18nProps } from "@/types/i18n/i18n-props.type";
 
 import logo from "@/assets/branding/logo/logo.png";
 
@@ -27,8 +26,10 @@ const getMenuItems = async () => {
   return data;
 };
 
-export default async function Header({ lang }: Readonly<LangProps>) {
-  const { layout } = await getDictionary(lang);
+export default async function Header({ i18n }: Readonly<I18nProps>) {
+  const {
+    dictionary: { layout },
+  } = i18n;
 
   const menuItems = await getMenuItems();
   const menuItemsWithLabel = menuItems.map((item) => ({
@@ -57,10 +58,10 @@ export default async function Header({ lang }: Readonly<LangProps>) {
         </Link>
       </div>
       <nav className="h-10 md:h-20 w-full gap-1 flex flex-col justify-between">
-        <MainSearch lang={lang} className="h-full md:h-2/4" />
+        <MainSearch i18n={i18n} className="h-full md:h-2/4" />
         <HeaderMenu items={menuItemsWithLabel} />
       </nav>
-      <HeaderExtraActions lang={lang} />
+      <HeaderExtraActions i18n={i18n} />
     </div>
   );
 }

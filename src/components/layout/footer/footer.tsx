@@ -4,21 +4,20 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import { SOCIAL } from "@/constants/social/social.constant";
 import { CONFIG } from "@/constants/config/config.constant";
-import { LangProps } from "@/types/i18n/lang-props.type";
-import { getDictionary } from "@/i18n/dictionary.util";
 import Image from "next/image";
+import { ROUTES } from "@/constants/routes/routes.constant";
+import { I18nProps } from "@/types/i18n/i18n-props.type";
 
 import logo from "@/assets/branding/logo/logo.png";
 
 import styles from "./footer.module.css";
-import { ROUTES } from "@/constants/routes/routes.constant";
 
 type Props = {
   className?: string;
-} & LangProps;
+} & I18nProps;
 
-export default async function Footer({ className, lang }: Props) {
-  const { layout } = await getDictionary(lang);
+export default async function Footer({ className, i18n }: Props) {
+  const { layout } = i18n.dictionary;
   const { links } = layout.footer;
 
   const footerLinks: Links = {

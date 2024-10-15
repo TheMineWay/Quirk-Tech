@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { SupervisedUserCircle, ShoppingCart } from "@mui/icons-material";
-import styles from "./header-extra-actions.module.css";
 import clsx from "clsx";
-import { LangProps } from "@/types/i18n/lang-props.type";
-import { getDictionary } from "@/i18n/dictionary.util";
+import { I18nProps } from "@/types/i18n/i18n-props.type";
+
+import styles from "./header-extra-actions.module.css";
 
 const linkClassName = clsx(styles.action, "p-2 rounded-md");
 
-type Props = LangProps;
+type Props = I18nProps;
 
-export default async function HeaderExtraActions({ lang }: Props) {
-  const { layout } = await getDictionary(lang);
+export default async function HeaderExtraActions({ i18n }: Props) {
+  const { layout } = i18n.dictionary;
 
   return (
     <div className="h-10 md:h-14 max-w-24 gap-1 flex items-center content-center">
