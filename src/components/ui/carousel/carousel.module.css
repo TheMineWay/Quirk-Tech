@@ -2,19 +2,13 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 25px 0;
 }
 
 .slider {
-    height: 500px;
+    height: 26em;
     overflow: hidden;
     position: relative;
-    width: 350px;
-
-    @media only screen and (width <=375px) {
-        height: 400px;
-        width: 300px;
-    }
+    width: 100%;
 }
 
 .image {
