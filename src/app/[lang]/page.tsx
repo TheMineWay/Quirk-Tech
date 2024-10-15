@@ -6,11 +6,11 @@ import MainCarousel from "@/components/landing/branding/main-carousel";
 type Props = I18nParams;
 
 export default async function Home({ params: { lang } }: Props) {
-  const dictionary = await getDictionary(lang);
+  const i18n = { dictionary: await getDictionary(lang), lang };
 
   return (
     <div className="flex flex-col">
-      <MainCarousel dictionary={dictionary} />
+      <MainCarousel i18n={i18n} />
     </div>
   );
 }

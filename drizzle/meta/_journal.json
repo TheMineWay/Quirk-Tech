@@ -5,36 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1728584681239,
-      "tag": "0000_optimal_fantastic_four",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1728630288526,
-      "tag": "0001_cheerful_jack_murdock",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1728978179753,
-      "tag": "0002_worried_frank_castle",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1728984349174,
-      "tag": "0003_sloppy_victor_mancha",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "7",
-      "when": 1728989088741,
-      "tag": "0004_ambiguous_molecule_man",
+      "when": 1728990694016,
+      "tag": "0000_mushy_beyonder",
       "breakpoints": true
     }
   ]

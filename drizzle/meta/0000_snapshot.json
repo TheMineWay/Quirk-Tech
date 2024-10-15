@@ -1,9 +1,260 @@
 {
-  "id": "5c4e1981-f17c-43db-8adc-fce7d82ba424",
+  "id": "88fb69f2-144c-49ca-9eb2-286de6e2a71b",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "landings.carousel_items": {
+      "name": "carousel_items",
+      "schema": "landings",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "code": {
+          "name": "code",
+          "type": "carousel_item_codes_enum",
+          "typeSchema": "landings",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "language": {
+          "name": "language",
+          "type": "languages_enum",
+          "typeSchema": "info",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "image": {
+          "name": "image",
+          "type": "bytea",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "carousel_items_code_language_unique": {
+          "name": "carousel_items_code_language_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "code",
+            "language"
+          ]
+        }
+      }
+    },
+    "landings.components": {
+      "name": "components",
+      "schema": "landings",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "component": {
+          "name": "component",
+          "type": "components_enum",
+          "typeSchema": "landings",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "landingId": {
+          "name": "landingId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order": {
+          "name": "order",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "data": {
+          "name": "data",
+          "type": "json",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'{}'::json"
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "components_landingId_landings_id_fk": {
+          "name": "components_landingId_landings_id_fk",
+          "tableFrom": "components",
+          "tableTo": "landings",
+          "schemaTo": "landings",
+          "columnsFrom": [
+            "landingId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "configs.header_menu_items": {
+      "name": "header_menu_items",
+      "schema": "configs",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "i18nKey": {
+          "name": "i18nKey",
+          "type": "varchar(128)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "href": {
+          "name": "href",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "active": {
+          "name": "active",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "parentId": {
+          "name": "parentId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "order": {
+          "name": "order",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "order_idx": {
+          "name": "order_idx",
+          "columns": [
+            {
+              "expression": "order",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "parent_fk": {
+          "name": "parent_fk",
+          "tableFrom": "header_menu_items",
+          "tableTo": "header_menu_items",
+          "schemaTo": "configs",
+          "columnsFrom": [
+            "parentId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "landings.landings": {
+      "name": "landings",
+      "schema": "landings",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "code": {
+          "name": "code",
+          "type": "varchar(16)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "path": {
+          "name": "path",
+          "type": "varchar(128)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "landings_code_unique": {
+          "name": "landings_code_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "code"
+          ]
+        },
+        "landings_path_unique": {
+          "name": "landings_path_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "path"
+          ]
+        }
+      }
+    },
     "users.user_credentials": {
       "name": "user_credentials",
       "schema": "users",
@@ -105,8 +356,33 @@
       }
     }
   },
-  "enums": {},
+  "enums": {
+    "landings.carousel_item_codes_enum": {
+      "name": "carousel_item_codes_enum",
+      "schema": "landings",
+      "values": [
+        "discounts"
+      ]
+    },
+    "landings.components_enum": {
+      "name": "components_enum",
+      "schema": "landings",
+      "values": [
+        "carousel"
+      ]
+    },
+    "info.languages_enum": {
+      "name": "languages_enum",
+      "schema": "info",
+      "values": [
+        "en-US"
+      ]
+    }
+  },
   "schemas": {
+    "configs": "configs",
+    "info": "info",
+    "landings": "landings",
     "users": "users"
   },
   "sequences": {},

@@ -1,10 +1,10 @@
 import { DB_SCHEMAS } from "@/db/db-schemas";
 
-export enum CarouselImageCode {
+export enum CarouselItemCode {
   DISCOUNTS = "discounts",
 }
 
-export const carouselImageCodesEnum = DB_SCHEMAS.landings.enum(
-  "carousel_image_codes_enum",
-  [CarouselImageCode.DISCOUNTS]
+export const carouselItemCodesEnum = DB_SCHEMAS.landings.enum(
+  "carousel_item_codes_enum",
+  [CarouselItemCode.DISCOUNTS]
 );

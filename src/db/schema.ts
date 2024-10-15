@@ -24,5 +24,5 @@ export { landings } from "@/db/schema/landing/landing.table";
 export { components } from "@/db/schema/landing/component.table";
 
 // -----> Components
-export { carouselImageCodesEnum } from "@/db/schema/landing/components/carousel/carousel-image-category.enum";
+export { carouselItemCodesEnum as carouselImageCodesEnum } from "@/db/schema/landing/components/carousel/carousel-image-category.enum";
 export { carouselItems } from "@/db/schema/landing/components/carousel/carousel-item.table";
