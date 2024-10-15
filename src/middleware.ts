@@ -19,10 +19,10 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (
-    request.nextUrl.pathname.startsWith("/_next") ||
-    request.nextUrl.pathname.includes("/api/") ||
+    pathname.startsWith("/_next") ||
+    pathname.includes("/api/") ||
     PUBLIC_FILE.test(request.nextUrl.pathname) ||
-    request.nextUrl.pathname.includes("robots.txt")
+    pathname.includes("robots.txt")
   ) {
     return;
   }
