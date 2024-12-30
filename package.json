@@ -29,7 +29,7 @@
     "@mui/icons-material": "^6.1.7",
     "@next/third-parties": "^15.0.3",
     "@nextui-org/button": "^2.0.38",
-    "@nextui-org/card": "^2.0.34",
+    "@nextui-org/card": "^2.2.8",
     "@nextui-org/modal": "^2.0.41",
     "@nextui-org/system": "^2.4.5",
     "@nextui-org/theme": "^2.2.11",
